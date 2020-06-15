@@ -1,0 +1,88 @@
+<div class="mat-elevation-z8 data-table">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>date</th>
+      <td mat-cell *matCellDef="let row">{{row.date}}</td>
+    </ng-container>
+
+    <!-- type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>type</th>
+      <td mat-cell *matCellDef="let row">{{row.type}}</td>
+    </ng-container>
+
+    <!-- K Column -->
+    <ng-container matColumnDef="K">
+      <th mat-header-cell  matTooltip="společná známka kategorií" matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K</th>
+      <td mat-cell *matCellDef="let row">{{row.K}}</td>
+    </ng-container>
+
+    <!-- K1 Column -->
+    <ng-container matColumnDef="K1">
+      <th mat-header-cell [matTooltip]=schema[0].H matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K1</th>
+      <td mat-cell *matCellDef="let row">{{row.K1}}</td>
+    </ng-container>
+
+    <!-- K2 Column -->
+    <ng-container matColumnDef="K2">
+      <th mat-header-cell [matTooltip]=schema[1].H matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K2</th>
+      <td mat-cell *matCellDef="let row">{{row.K2}}</td>
+    </ng-container>
+
+    <!-- K3 Column -->
+    <ng-container matColumnDef="K3">
+      <th mat-header-cell [matTooltip]=schema[2].H matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K3</th>
+      <td mat-cell *matCellDef="let row">{{row.K3}}</td>
+    </ng-container>
+
+    <!-- K4 Column -->
+    <ng-container matColumnDef="K4">
+      <th mat-header-cell [matTooltip]=schema[3].H matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K4</th>
+      <td mat-cell *matCellDef="let row">{{row.K4}}</td>
+    </ng-container>
+
+    <!-- K5 Column -->
+    <ng-container matColumnDef="K5">
+      <th mat-header-cell [matTooltip]=schema[4].H matTooltipPosition="above" *matHeaderCellDef mat-sort-header>K5</th>
+      <td mat-cell *matCellDef="let row">{{row.K5}}</td>
+    </ng-container>
+
+    <!-- validate Column -->
+    <ng-container matColumnDef="validate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>validate</th>
+      <td mat-cell *matCellDef="let row">{{row.validate}}</td>
+    </ng-container>
+
+    <!-- printBTN Column -->
+    <ng-container matColumnDef="iconPrint">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Print</th>
+      <td mat-cell *matCellDef="let row" [routerLink]="['/print']"><button mat-button class="iconBTN">
+          <mat-icon>print</mat-icon>
+        </button></td>
+    </ng-container>
+
+    <!-- editBTN Column -->
+    <ng-container matColumnDef="iconEdit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
+      <td mat-cell *matCellDef="let row" [routerLink]="['/editTree', row.iconEdit]"><button mat-button class="iconBTN">
+          <mat-icon>edit</mat-icon>
+        </button></td>
+    </ng-container>
+
+    <!-- deleteBTN Column -->
+    <ng-container matColumnDef="iconDelete">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+      <td mat-cell *matCellDef="let row"><button mat-button class="iconBTN" (click)="delete(row.iconDelete)">
+          <mat-icon>delete</mat-icon>
+        </button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50"
+    [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

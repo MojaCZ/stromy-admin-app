@@ -1,0 +1,19 @@
+<div *ngIf="grades.length>1" class="block">
+  <div class="section">
+    <button mat-icon-button (click)="fold()">
+      <mat-icon *ngIf="folded">keyboard_arrow_down</mat-icon>
+      <mat-icon *ngIf="!folded">keyboard_arrow_right</mat-icon>
+      <!-- <mat-icon>keyboard_arrow_right</mat-icon> -->
+    </button>
+    <mat-checkbox [checked]="mainChecked" [indeterminate]="mainIndeterminate" (change)="changeAll()"> {{data.value.name}} </mat-checkbox>
+  </div>
+  <div *ngIf="folded">
+    <div *ngFor="let node of data.value.grades | keyvalue" class="node">
+      <mat-checkbox
+        [checked]="grades[node.key]"
+        (change)="grades[node.key]=!grades[node.key]; checkAll()">
+        {{node.value}}
+      </mat-checkbox>
+    </div>
+  </div>
+</div>

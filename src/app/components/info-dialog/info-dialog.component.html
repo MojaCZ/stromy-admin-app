@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content>
+  <ol>
+    <li *ngFor="let item of data.info">{{item}}</li>
+  </ol>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>ZAVŘÍT</button>
+</mat-dialog-actions>

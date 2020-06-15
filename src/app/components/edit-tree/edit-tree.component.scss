@@ -1,0 +1,44 @@
+.form-window {
+  width: 80%;
+  margin: 20px auto;
+}
+.addForm {
+  width: 400px;
+  margin-left: auto; margin-right: auto;
+}
+.categoryForm {
+  
+}
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+::ng-deep {
+  .mat-horizontal-stepper-header-container {
+    background-color:#f2f2f2;
+  }
+  .mat-horizontal-content-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 0px !important;
+  }
+  .mat-horizontal-stepper-content {
+    margin-top: 0px;
+  }
+}
+.bottomBTNs{
+  margin-top: 30px;
+  width: 100%;
+  button {
+    padding: 10px 0;
+  }
+}
+.mat-form-field {
+  margin-top: 16px;
+  display: block;
+  width: 100%;
+}
+
+.tree-invisible {
+  display: none;
+}

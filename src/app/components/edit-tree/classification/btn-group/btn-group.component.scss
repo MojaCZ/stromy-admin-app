@@ -1,0 +1,29 @@
+.catBlock {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+.header{
+  padding: 8px 30px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.content {
+  padding: 12px 30px;
+  padding-top: 30px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.infoBTN {
+  display: inline-block;
+  float:right;
+}
+
+
+::ng-deep {
+  .mat-radio-label-content {
+    position: relative;
+    top: -25px;
+    left: -22px;
+  }
+}

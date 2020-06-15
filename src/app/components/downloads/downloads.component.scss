@@ -1,0 +1,31 @@
+.subheader {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-top: 20px;
+}
+.files {
+  a {
+    color: rgba(0, 0, 0, 0.87);
+    text-decoration: none;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+    position: relative;
+    height: 70px;
+  }
+  .icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .label {
+    padding-left: 16px;
+  }
+}

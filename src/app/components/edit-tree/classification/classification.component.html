@@ -1,0 +1,24 @@
+<mat-accordion *ngIf="editTreeService.kData.length > 0">
+  <mat-expansion-panel *ngFor="let section of configData; let catIndex = index">
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{section.H}}
+      </mat-panel-title>
+      <mat-panel-description>
+        známka kategorie: {{ kValues[catIndex] }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+
+    <div *ngIf="section">
+      <div *ngFor="let groupD of section.subCat; let i = index">
+        <app-btn-group
+        [kategorie]=catIndex [groupIndex]=i
+        ></app-btn-group>
+      </div>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
